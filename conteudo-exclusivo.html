@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo Exclusivo para Inscritos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .youtube-btn {
+            background: #FF0000;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .youtube-btn:hover {
+            transform: translateY(-2px);
+            background: #CC0000;
+        }
+        
+        .verify-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            background: #218838;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .exclusive-link {
+            background: #17a2b8;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .exclusive-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .warning {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .step {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Conteúdo Exclusivo</h1>
+        <p>Este material é disponibilizado apenas para inscritos do canal!</p>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Inscreva-se no canal</strong>
+        </div>
+        
+        <!-- SUBSTITUA O LINK PELO SEU CANAL -->
+        <a href="https://www.youtube.com/@MrJhefy" 
+           target="_blank" 
+           class="youtube-btn">
+           📺 Inscrever no YouTube
+        </a>
+        
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Clique no botão abaixo após se inscrever</strong>
+        </div>
+        
+        <button class="verify-btn" onclick="liberarConteudo()">
+            ✅ Já sou inscrito, liberar conteúdo
+        </button>
+        
+        <p class="warning">
+            ⚠️ O sistema verifica automaticamente a honestidade do usuário
+        </p>
+        
+        <div id="conteudoExclusivo" class="hidden">
+            <div class="content">
+                <h2>🎉 Parabéns! Conteúdo Liberado</h2>
+                <p>Obrigado por ser um inscrito do canal!</p>
+                
+                <!-- SUBSTITUA PELO SEU LINK REAL -->
+                <a href="https://www.mediafire.com/file/qks0qrpndp4lw1c/𝐭𝐞𝐱𝐭𝐮𝐫𝐚𝐬,𝐦𝐨𝐝𝐩𝐚𝐜𝐤+𝐞+𝐬𝐡𝐚𝐝𝐞𝐫𝐬.zip/file" 
+                   target="_blank" 
+                   class="exclusive-link">
+                   🔗 ACESSAR LINK EXCLUSIVO
+                </a>
+                
+                <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                    Este link ficará disponível por 24 horas
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function liberarConteudo() {
+            // Mostra um popup de confirmação
+            const isSubscribed = confirm("Você realmente é inscrito no canal?\n\n⚠️ Lembre-se: Sistema baseado na confiança!");
+            
+            if (isSubscribed) {
+                // Mostra o conteúdo exclusivo
+                document.getElementById('conteudoExclusivo').classList.remove('hidden');
+                
+                // Rola a página até o conteúdo
+                document.getElementById('conteudoExclusivo').scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Salva no navegador que já verificou (opcional)
+                localStorage.setItem('inscritoVerificado', 'true');
+                
+                // Opcional: Mostra mensagem de agradecimento
+                alert('Obrigado por ser um inscrito! 😊\nAproveite o conteúdo exclusivo!');
+            } else {
+                alert('⚠️ Volte aqui após se inscrever no canal!');
+            }
+        }
+        
+        // Verifica se já liberou o conteúdo antes
+        window.onload = function() {
+            if (localStorage.getItem('inscritoVerificado') === 'true') {
+                document.getElementById('conteudoExclusivo').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
