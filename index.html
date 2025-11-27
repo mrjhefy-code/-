@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,140 +9,553 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             padding: 20px;
         }
-        
+
         .container {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 600px;
             width: 100%;
+            text-align: center;
         }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        
-        .youtube-btn {
+
+        .header {
             background: #FF0000;
             color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            padding: 40px 30px;
+        }
+
+        .header .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .benefits {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .benefits h3 {
+            color: #FF0000;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefits ul {
+            list-style: none;
+        }
+
+        .benefits li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            color: #34A853;
             font-weight: bold;
-            margin: 15px 0;
-            transition: transform 0.3s;
+            position: absolute;
+            left: 0;
         }
-        
-        .youtube-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .verify-btn {
-            background: #28a745;
-            color: white;
+
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            margin: 10px;
             border: none;
-            padding: 15px 40px;
             border-radius: 50px;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
+            text-decoration: none;
             cursor: pointer;
-            margin: 20px 0;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            min-width: 200px;
         }
-        
-        .verify-btn:hover {
-            transform: translateY(-2px);
+
+        .btn-primary {
+            background: #FF0000;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
         }
-        
+
+        .btn-primary:hover {
+            background: #CC0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: #4285F4;
+            color: white;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: #3367D6;
+            transform: translateY(-3px);
+        }
+
+        .btn-success {
+            background: #34A853;
+            color: white;
+            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.4);
+        }
+
+        .btn-success:hover {
+            background: #2E8B47;
+            transform: translateY(-3px);
+        }
+
         .hidden {
             display: none;
         }
-        
-        .content {
-            background: #f8f9fa;
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
             padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border-left: 4px solid #28a745;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #c3e6cb;
         }
-        
-        .exclusive-link {
-            background: #17a2b8;
+
+        .instructions {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #ffeaa7;
+        }
+
+        .link-container {
+            margin: 30px 0;
+        }
+
+        .protected-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #34A853, #2E8B47);
             color: white;
-            padding: 15px 30px;
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            display: inline-block;
+            box-shadow: 0 8px 25px rgba(52, 168, 83, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .protected-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(52, 168, 83, 0.7);
+        }
+
+        .countdown {
+            font-size: 14px;
+            color: #666;
             margin-top: 15px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
             font-weight: bold;
+            color: #FF0000;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎬 Conteúdo Exclusivo</h1>
-        <p>Este material é disponibilizado apenas para inscritos do canal!</p>
-        
-        <!-- SUBSTITUA PELO SEU LINK DO YOUTUBE -->
-        <a href="https://www.youtube.com/@MrJhefy" 
-           target="_blank" 
-           class="youtube-btn">
-           📺 Inscrever no YouTube
-        </a>
-        
-        <br>
-        
-        <button class="verify-btn" onclick="liberarConteudo()">
-            ✅ Já sou inscrito, liberar conteúdo
-        </button>
-        
-        <div id="conteudoExclusivo" class="hidden">
+        <!-- TELA INICIAL -->
+        <div id="welcome-screen">
+            <div class="header">
+                <div class="icon">🔒</div>
+                <h1>Conteúdo Exclusivo</h1>
+                <p>Disponível apenas para inscritos do canal</p>
+            </div>
+
             <div class="content">
-                <h2>🎉 Parabéns! Conteúdo Liberado</h2>
-                <p>Obrigado por ser um inscrito do canal!</p>
-                
-                <!-- SUBSTITUA PELO SEU LINK REAL -->
-                <a href="https://www.mediafire.com/file/psawhohjfs4okbt/cinetv_tek-apkpm.apk/file" 
-                   target="_blank" 
-                   class="exclusive-link">
-                   🔗 ACESSAR LINK EXCLUSIVO
-                </a>
+                <h2>🎁 Presente Especial para Inscritos</h2>
+                <p style="margin: 20px 0; font-size: 16px; color: #555;">
+                    Como agradecimento pela sua inscrição, preparamos um conteúdo especial 
+                    que vai te ajudar a alcançar seus objetivos!
+                </p>
+
+                <div class="benefits">
+                    <h3>✨ O que você vai receber:</h3>
+                    <ul>
+                        <li>Acesso ao material exclusivo</li>
+                        <li>Download gratuito</li>
+                        <li>Tutorial passo a passo</li>
+                        <li>Suporte prioritário</li>
+                        <li>Atualizações futuras</li>
+                    </ul>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="user-count">1.2K</div>
+                        <div class="stat-label">Pessoas já acessaram</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="time-saved">15min</div>
+                        <div class="stat-label">Tempo economizado</div>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <strong>📋 Como acessar:</strong><br>
+                    1. Clique em "Ir para o Canal"<br>
+                    2. Inscreva-se no canal<br>
+                    3. Volte aqui e clique em "Já sou inscrito"
+                </div>
+
+                <div>
+                    <button class="btn btn-primary" onclick="verifySubscription()">
+                        ✅ JÁ SOU INSCRITO
+                    </button>
+                    
+                    <a href="https://www.youtube.com/@SEU_CANAL_AQUI" 
+                       target="_blank" 
+                       class="btn btn-secondary">
+                        📺 IR PARA O CANAL
+                    </a>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 14px; color: #888;">
+                    🔐 Após verificação, o acesso ficará liberado por 24 horas
+                </p>
+            </div>
+        </div>
+
+        <!-- TELA DE SUCESSO -->
+        <div id="success-screen" class="hidden">
+            <div class="header" style="background: #34A853;">
+                <div class="icon">🎉</div>
+                <h1>Acesso Liberado!</h1>
+                <p>Obrigado por ser inscrito!</p>
+            </div>
+
+            <div class="content">
+                <div class="success-message">
+                    <h3>✅ Verificação concluída com sucesso!</h3>
+                    <p>Seu acesso ao conteúdo exclusivo foi liberado.</p>
+                </div>
+
+                <div class="link-container">
+                    <h2>📥 Seu Presente Está Aqui</h2>
+                    <p style="margin: 15px 0;">Clique no botão abaixo para acessar agora:</p>
+                    
+                    <a href="https://www.seulinkexclusivo.com/download" 
+                       class="protected-link" 
+                       target="_blank" 
+                       id="final-link">
+                        🎁 BAIXAR CONTEÚDO EXCLUSIVO
+                    </a>
+                    
+                    <div class="countdown">
+                        ⏰ Este link expira em: <span id="expiry-time">24:00:00</span>
+                    </div>
+                </div>
+
+                <div style="margin: 30px 0;">
+                    <h3>📢 Compartilhe com Amigos</h3>
+                    <p>Mas lembre-se: este conteúdo é exclusivo para inscritos!</p>
+                </div>
+
+                <button class="btn btn-success" onclick="goToChannel()">
+                    📺 VISITAR CANAL NOVAMENTE
+                </button>
             </div>
         </div>
     </div>
 
     <script>
-        function liberarConteudo() {
-            const isSubscribed = confirm("Você realmente é inscrito no canal?");
+        // 🔧 CONFIGURAÇÃO - PERSONALIZE AQUI!
+        const CONFIG = {
+            // Link do seu canal do YouTube (OBRIGATÓRIO)
+            youtubeChannel: "https://www.youtube.com/@MrJhefy",
             
-            if (isSubscribed) {
-                document.getElementById('conteudoExclusivo').classList.remove('hidden');
-                localStorage.setItem('inscritoVerificado', 'true');
+            // Link que será liberado (OBRIGATÓRIO)
+            protectedLink: "https://www.mediafire.com/file/qks0qrpndp4lw1c/%25F0%259D%2590%25AD%25F0%259D%2590%259E%25F0%259D%2590%25B1%25F0%259D%2590%25AD%25F0%259D%2590%25AE%25F0%259D%2590%25AB%25F0%259D%2590%259A%25F0%259D%2590%25AC%252C%25F0%259D%2590%25A6%25F0%259D%2590%25A8%25F0%259D%2590%259D%25F0%259D%2590%25A9%25F0%259D%2590%259A%25F0%259D%2590%259C%25F0%259D%2590%25A4_%25F0%259D%2590%259E_%25F0%259D%2590%25AC%25F0%259D%2590%25A1%25F0%259D%2590%259A%25F0%259D%2590%259D%25F0%259D%2590%259E%25F0%259D%2590%25AB%25F0%259D%2590%25AC.zip/file",
+            
+            // Tempo que o acesso ficará liberado (em horas)
+            accessDuration: 24,
+            
+            // Nome do seu canal (para personalizar mensagens)
+            channelName: "MrJhefy",
+            
+            // Simular estatísticas (opcional)
+            simulatedUsers: "1.2K",
+            simulatedTime: "15min"
+        };
+
+        // Elementos da interface
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const successScreen = document.getElementById('success-screen');
+        const finalLink = document.getElementById('final-link');
+        const expiryTime = document.getElementById('expiry-time');
+        const userCount = document.getElementById('user-count');
+        const timeSaved = document.getElementById('time-saved');
+
+        // Inicializar a página
+        function initializePage() {
+            // Atualizar estatísticas simuladas
+            userCount.textContent = CONFIG.simulatedUsers;
+            timeSaved.textContent = CONFIG.simulatedTime;
+            
+            // Configurar link final
+            finalLink.href = CONFIG.protectedLink;
+            
+            // Verificar se já tem acesso liberado
+            checkExistingAccess();
+        }
+
+        // Verificar se o usuário já tem acesso liberado
+        function checkExistingAccess() {
+            const accessData = getAccessData();
+            
+            if (accessData && !isAccessExpired(accessData.timestamp)) {
+                // Acesso ainda válido
+                grantAccess();
+                startCountdown(accessData.timestamp);
             }
         }
-        
-        // Verifica se já liberou antes
-        if (localStorage.getItem('inscritoVerificado') === 'true') {
-            document.getElementById('conteudoExclusivo').classList.remove('hidden');
+
+        // Função principal de verificação
+        function verifySubscription() {
+            // Mostrar caixa de diálogo personalizada
+            showCustomDialog();
         }
+
+        // Diálogo personalizado
+        function showCustomDialog() {
+            Swal.fire({
+                title: '🔐 Verificação de Inscrição',
+                html: `
+                    <div style="text-align: left;">
+                        <p>Para acessar este conteúdo, você precisa ser inscrito no canal <strong>${CONFIG.channelName}</strong>.</p>
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 15px 0;">
+                            <strong>📋 Como verificar:</strong><br>
+                            1. Você já é inscrito no canal?<br>
+                            2. Autoriza a verificação da inscrição?<br>
+                            3. O acesso será liberado instantaneamente!
+                        </div>
+                        <p><small>🔒 Respeitamos sua privacidade. Não coletamos dados pessoais.</small></p>
+                    </div>
+                `,
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: '✅ Sim, sou inscrito!',
+                cancelButtonText: '📺 Ir para o canal',
+                confirmButtonColor: '#34A853',
+                cancelButtonColor: '#FF0000',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Usuário confirmou que é inscrito
+                    processVerification();
+                } else {
+                    // Usuário quer ir para o canal
+                    window.open(CONFIG.youtubeChannel, '_blank');
+                    
+                    // Mostrar mensagem de instrução
+                    Swal.fire({
+                        title: '📺 Perfeito!',
+                        html: `
+                            <p>O canal abriu em uma nova aba.</p>
+                            <p>Depois de se inscrever, volte aqui e clique em <strong>"✅ JÁ SOU INSCRITO"</strong></p>
+                        `,
+                        icon: 'info',
+                        confirmButtonText: 'Entendi'
+                    });
+                }
+            });
+        }
+
+        // Processar a verificação
+        function processVerification() {
+            // Mostrar loading
+            Swal.fire({
+                title: '🔍 Verificando...',
+                text: 'Estamos confirmando seu acesso...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            // Simular tempo de verificação (2 segundos)
+            setTimeout(() => {
+                // Conceder acesso
+                grantAccess();
+                
+                // Salvar no localStorage
+                saveAccessData();
+                
+                // Mostrar mensagem de sucesso
+                Swal.fire({
+                    title: '🎉 Acesso Liberado!',
+                    text: 'Obrigado por ser inscrito!',
+                    icon: 'success',
+                    confirmButtonText: 'Acessar Conteúdo'
+                });
+            }, 2000);
+        }
+
+        // Conceder acesso ao usuário
+        function grantAccess() {
+            welcomeScreen.classList.add('hidden');
+            successScreen.classList.remove('hidden');
+            
+            // Iniciar contagem regressiva
+            startCountdown(Date.now());
+        }
+
+        // Salvar dados de acesso
+        function saveAccessData() {
+            const accessData = {
+                timestamp: Date.now(),
+                expiry: Date.now() + (CONFIG.accessDuration * 60 * 60 * 1000)
+            };
+            
+            localStorage.setItem('subscription_access', JSON.stringify(accessData));
+        }
+
+        // Recuperar dados de acesso
+        function getAccessData() {
+            const data = localStorage.getItem('subscription_access');
+            return data ? JSON.parse(data) : null;
+        }
+
+        // Verificar se o acesso expirou
+        function isAccessExpired(timestamp) {
+            const now = Date.now();
+            const expiryTime = timestamp + (CONFIG.accessDuration * 60 * 60 * 1000);
+            return now > expiryTime;
+        }
+
+        // Iniciar contagem regressiva
+        function startCountdown(startTime) {
+            const expiryTime = startTime + (CONFIG.accessDuration * 60 * 60 * 1000);
+            
+            function updateCountdown() {
+                const now = Date.now();
+                const timeLeft = expiryTime - now;
+                
+                if (timeLeft <= 0) {
+                    expiryTime.textContent = "Expirado!";
+                    // Recarregar a página para reverter para tela inicial
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000);
+                    return;
+                }
+                
+                // Converter para horas, minutos, segundos
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                expiryTime.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+            
+            // Atualizar a cada segundo
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Ir para o canal
+        function goToChannel() {
+            window.open(CONFIG.youtubeChannel, '_blank');
+        }
+
+        // Inicializar quando a página carregar
+        document.addEventListener('DOMContentLoaded', initializePage);
+
+        // 🔥 BÔNUS: Proteção contra F5
+        let lastClickTime = 0;
+        finalLink.addEventListener('click', function(e) {
+            const currentTime = Date.now();
+            
+            // Prevenir múltiplos cliques em menos de 2 segundos
+            if (currentTime - lastClickTime < 2000) {
+                e.preventDefault();
+                Swal.fire({
+                    title: '⏳ Aguarde...',
+                    text: 'O link já está sendo aberto...',
+                    icon: 'warning',
+                    timer: 2000
+                });
+                return;
+            }
+            
+            lastClickTime = currentTime;
+            
+            // Registrar acesso (opcional)
+            console.log('Link acessado:', CONFIG.protectedLink);
+        });
     </script>
+
+    <!-- Incluir SweetAlert2 para diálogos bonitos -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
